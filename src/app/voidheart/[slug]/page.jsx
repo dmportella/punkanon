@@ -2,7 +2,7 @@ import React from "react";
 import * as PostService from '@/lib/services/posts';
 import Post from "@/components/ui/post";
 
-const SECTION = 'netwire';
+const SECTION = 'voidheart';
 
 export const generateStaticParams = async () => {
   const posts = PostService.getPostsByGroup(SECTION).map((post) => ({
@@ -11,10 +11,10 @@ export const generateStaticParams = async () => {
   return posts;
 };
 
-const Netwire = (props) => {
+const Voidheart = (props) => {
   return (
     <Post group={SECTION} slug={props.params.slug} />
   );
 };
 
-export default Netwire;
+export default Voidheart;
