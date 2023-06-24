@@ -11,6 +11,14 @@ export const generateStaticParams = async () => {
   return posts;
 };
 
+export async function generateMetadata({ params }) {
+  const post = PostService.getPostContent(SECTION, params.slug);
+  return {
+    title: post.data.title,
+    description: post.data.description
+  }
+}
+
 const Netwire = (props) => {
   return (
     <Post group={SECTION} slug={props.params.slug} />
